@@ -1,0 +1,52 @@
+# Backtest configuration. Edit and re-run scripts/run_backtest.py.
+
+universe:
+  # Fixed mega-cap US universe (selected ~2024). The fixed set is the
+  # honest way to demo without survivorship-bias arguments: this list is
+  # the universe by construction, and the README acknowledges the bias
+  # explicitly.
+  tickers:
+    [AAPL, MSFT, GOOGL, META, NVDA, AMD, INTC, CRM, ORCL, ADBE, CSCO,
+     NFLX, DIS, T, VZ, CMCSA,
+     AMZN, TSLA, HD, MCD, NKE, SBUX, F, GM,
+     PG, KO, PEP, WMT, COST,
+     JPM, BAC, WFC, GS, MS, BLK, V, MA,
+     JNJ, PFE, UNH, ABBV, MRK, LLY,
+     CAT, BA, GE, MMM, HON,
+     XOM, CVX, COP,
+     LIN, FCX]
+
+dates:
+  start: "2010-01-01"
+  end: null            # null = today
+
+signals:
+  momentum:
+    lookback_days: 252      # 12 months
+    skip_days: 21           # skip last month -> 12-1 momentum
+  low_vol:
+    lookback_days: 63       # ~3 months realized vol
+  quality:                  # proxy: 252d return / 252d vol = trend-quality
+    lookback_days: 252
+
+blend:
+  method: ridge             # "equal" or "ridge"
+  ridge_alpha: 1.0
+  train_window_days: 756    # ~3y rolling
+  refit_freq_days: 21       # monthly retrain
+  fwd_return_days: 21       # predict 1-month forward returns
+
+portfolio:
+  long_decile: 1            # 1 = top 10% by alpha
+  short_decile: 10          # 10 = bottom 10%
+  weighting: equal          # "equal" or "tf_max_sharpe"
+  gross_leverage: 2.0       # long = 1.0, short = 1.0
+  rebalance_freq_days: 5    # weekly rebalance
+
+execution:
+  delay_days: 1             # t+1: rank on close(t), trade at close(t+1)
+  cost_bps_per_side: 5.0    # round-trip = 10 bps on turnover
+  slippage_bps: 2.0         # additional impact on turnover
+
+risk:
+  annual_risk_free: 0.02
