@@ -9,7 +9,9 @@ finance-course/
 ├── lecture_01/
 │   └── uniform_sum_distributions.py   # Sum of Uniform RVs, Monte Carlo vs analytical
 ├── lecture_02/
-│   └── svm_loan_default.py            # Support Vector Machines for loan default prediction
+│   ├── svm_minimal.py                 # ~80-line minimal SVM example (every slide concept)
+│   ├── svm_loan_default.py            # Full deep-dive SVM script (commented end-to-end)
+│   └── STRUCTURE.md                   # Mermaid flow charts of the code structure
 └── ...
 ```
 
@@ -24,4 +26,4 @@ pip install numpy matplotlib scipy scikit-learn pandas
 | Lecture | Topic | Files |
 |---------|-------|-------|
 | 01 | Probability — Sum of Uniform Random Variables (Irwin-Hall) | `uniform_sum_distributions.py` |
-| 02 | Support Vector Machines — Loan Default Prediction (SVC + SVR, kernel trick, KKT) | `svm_loan_default.py` |
+| 02 | Support Vector Machines — Loan Default Prediction (SVC + SVR, kernel trick, KKT) | `svm_minimal.py`, `svm_loan_default.py`, [`STRUCTURE.md`](lecture_02/STRUCTURE.md) |
