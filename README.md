@@ -13,7 +13,8 @@ finance-course/
 │   ├── svm_from_scratch.py            # Solve the SVM Lagrangian dual explicitly with cvxpy
 │   ├── svm_visualize.py               # Step-by-step plot for every stage of svm_from_scratch.py
 │   ├── svm_loan_default.py            # Full deep-dive SVM script (commented end-to-end)
-│   └── STRUCTURE.md                   # Mermaid flow charts of the code structure
+│   ├── STRUCTURE.md                   # Mermaid flow charts of the code structure
+│   └── SVM_from_scratch_theory.pdf    # Line-by-line theory document (13-page PDF)
 └── ...
 ```
 
@@ -28,4 +29,4 @@ pip install numpy matplotlib scipy scikit-learn pandas cvxpy
 | Lecture | Topic | Files |
 |---------|-------|-------|
 | 01 | Probability — Sum of Uniform Random Variables (Irwin-Hall) | `uniform_sum_distributions.py` |
-| 02 | Support Vector Machines — Loan Default Prediction (SVC + SVR, kernel trick, KKT) | `svm_minimal.py`, `svm_from_scratch.py`, `svm_visualize.py`, `svm_loan_default.py`, [`STRUCTURE.md`](lecture_02/STRUCTURE.md) |
+| 02 | Support Vector Machines — Loan Default Prediction (SVC + SVR, kernel trick, KKT) | `svm_minimal.py`, `svm_from_scratch.py`, `svm_visualize.py`, `svm_loan_default.py`, [`STRUCTURE.md`](lecture_02/STRUCTURE.md), [`SVM_from_scratch_theory.pdf`](lecture_02/SVM_from_scratch_theory.pdf) |
